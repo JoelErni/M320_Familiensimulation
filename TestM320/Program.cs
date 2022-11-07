@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks
+using System.Threading.Tasks;
 
 
 namespace TestM320
@@ -15,7 +15,10 @@ namespace TestM320
     {
         static void Main(string[] args)
         {
-            Kinder k1 = new Kinder();
+            Familie f1 = new Familie();
+            Person p1 = new Person();
+            Eltern e1 = new Eltern();
+            Kind
             Console.ReadLine();
         }
     }

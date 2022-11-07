@@ -32,13 +32,15 @@ namespace TestM320
 
         public string getVorname()
         {
-
+            setVorname()
+            get
         }
 
         public void setVorname()
         {
             Random random = new Random()
-            int value = rando
+            int value = random.Next(0,21)
+            _vorname = Vorname[value];
         }
     }
 }
