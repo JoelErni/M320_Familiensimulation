@@ -15,7 +15,7 @@ namespace TestM320
     {
         static void Main(string[] args)
         {
-            
+            Kinder k1 = new Kinder();
             Console.ReadLine();
         }
     }

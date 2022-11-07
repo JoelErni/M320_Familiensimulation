@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TestM320
 {
-    internal class Person
+    public class Person
     {
         //Membervariablen
         public Familie _familie; //Referenz
@@ -36,5 +36,9 @@ namespace TestM320
         }
 
         public void setVorname()
+        {
+            Random random = new Random()
+            int value = rando
+        }
     }
 }

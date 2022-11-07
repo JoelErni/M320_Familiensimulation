@@ -8,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace TestM320
 {
-  public class Kinder
+  public class Kinder:person
   {
-    
+     public Kinder():base
+    {
+
+    }
   }
 }
