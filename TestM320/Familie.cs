@@ -8,32 +8,23 @@ using System.Threading.Tasks;
 
 namespace TestM320
 {
-
     public class Familie
     {
-        string[] FamilienName = new string[] { "Müller", "Schmidt", "Schneider", "Fischer", "Meyer", "Weber", "Wagner", "Becker", "Schulz", "Hoffmann", "Schäfer", "Koch", "Bauer", "Richter", "Klein", "Schröder", "Wolf", "Neumann", "Schwarz", "Zimmermann", "Krüger" };
-        public Familie()
-        {
-            _AKinder = getAKinder();
-            _FamilienNachname = getFamilienNachname();
-        }
-
-        private int _AKinder;
+        //MemberVariabeln
         private string _FamilienNachname;
 
-        public int getAKinder()
-        {
-            return _AKinder;
-        }
+        //Familienname Array
+        string[] FamilienName = new string[] { "Müller", "Schmidt", "Schneider", "Fischer", "Meyer", "Weber", "Wagner", "Becker", "Schulz", "Hoffmann", "Schäfer", "Koch", "Bauer", "Richter", "Klein", "Schröder", "Wolf", "Neumann", "Schwarz", "Zimmermann", "Krüger" };
+        
 
-        public void setAKinder()
+        //Konstruktoren
+        public Familie()
         {
-            Random random = new Random();
-            int value = random.Next(0, 4);
-            _AKinder = value;
-            Console.WriteLine(value);
-            Console.ReadKey();
+            _FamilienNachname = getFamilienNachname();
         }
+        
+
+        //Methoden
         public string getFamilienNachname()
         {
             setFamilienNachname();

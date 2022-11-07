@@ -8,11 +8,13 @@ namespace TestM320
 {
     internal class Eltern : Person
     {
-        public Familie _familie;
+        //Membervariabel
+        public byte _anzahlKinder;
 
-        public Eltern(Familie familie, string vorname, string nachname, byte sehstaerke, string augenfarbe, byte hoervermoegen, bool geschlecht) :base(vorname, nachname, sehstaerke, augenfarbe, hoervermoegen, geschlecht)
+        //Konstruktor
+        public Eltern(byte anzahlKinder, string vorname, string nachname, byte sehstaerke, string augenfarbe, byte hoervermoegen, bool geschlecht) :base(vorname, nachname, sehstaerke, augenfarbe, hoervermoegen, geschlecht)
         {
-            _familie = familie;
+            _anzahlKinder = anzahlKinder;
         }
     }
 }
