@@ -23,11 +23,9 @@ namespace TestM320
 
       //erstellt die Familien
       Familie f1 = new Familie();
-      Familie f2 = new Familie();
 
       //Gibt alle Daten von den einzelnen Familienmitglieder aus
       f1.FamilienDatenausgabe();
-      f2.FamilienDatenausgabe();
 
       Console.ReadLine();
         }

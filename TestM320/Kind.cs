@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestM320
 {
-  internal class Kind:Person
+  internal class Kind : Person , ILebenserwartung
   {
     //Member
     public Eltern _elternteil1 { get; set; }
@@ -15,13 +15,13 @@ namespace TestM320
     private bool _isAdopted;
 
     //Konstruktor
-    public Kind(Eltern elternteil1, Eltern elternteil2):base(elternteil1._familie)
+    public Kind(Eltern elternteil1, Eltern elternteil2) : base(elternteil1._familie)
     {
       //wenn Eltern gleiche Geschlechter haben -> Kind wird adoptiert -> Augenfarbe, Grösse usw wird nicht von den Eltern beeinflusst
       if (elternteil1.getGeschlecht() != elternteil2.getGeschlecht())
       {
         _isAdopted = false;
-        Random rand = new Random();
+        Random rand = random;
 
         //Die Augenfarben, Sehstärken, Hörvermögen und Grösse werden von den Eltern beeinflusst.
         _elternteil1 = elternteil1;
@@ -66,10 +66,18 @@ namespace TestM320
       return _isAdopted;
     }
 
+    //Interface
+    public void LebenserwartungMenschen()
+    {
+        int LebenszeitKinder = random.Next(50, 120);
+    }
+
     public override void Datenausgabe()
     {
-      Console.Write($"ist adoptiert: {getIsAdopted()}, ");
+            int LebenszeitKinder = random.Next(50, 120);
+            Console.Write($"ist adoptiert: {getIsAdopted()}, Lebenserwartung: {LebenszeitKinder} Jahre, ");
       base.Datenausgabe();
     }
+
   }
 }

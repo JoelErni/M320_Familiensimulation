@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Eltern.cs" />
     <Compile Include="Familie.cs" />
+    <Compile Include="ILebenserwartung.cs" />
     <Compile Include="Kind.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />

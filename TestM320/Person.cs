@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestM320
 {
-    public class Person
+    public class Person:ILebenserwartung
     {
         //Membervariablen
         public Familie _familie; //Referenz
@@ -18,18 +18,16 @@ namespace TestM320
         public byte _hoervermoegen;
         public float _groesse;
         public bool _geschlecht;
-        public int _lebenserwartung;
+        public static Random random = new Random();
 
 
         //Vorname Array Männlich
         string[] MännlichVornameArray = new string[] { "Lucas", "Joel", "Dines", "Gianmarco", "Duarte","Markus", "Edwin", "Manuel", "Felix", "Malix", "David", "Karsten", "Patrick", "Tomas"};
         //Vorname Array Weiblich
         string[] WeiblichVornameArray = new string[] {  "Valentina", "Sara", "Aline", "Susanne", "Malix", "Maria", "Vemy", "Lina", "Leonie"};
-        //Konstruktor
-        public Person (string s)
-        {
 
-        }
+
+        //Konstruktor
         public Person(Familie familie)
         {
             _familie = familie;
@@ -39,15 +37,14 @@ namespace TestM320
         public void RandomStats()
         {
             //Hier wird ein Random Wert für die Sehstärke generiert
-            Random random1 = new Random();
-            byte Sehstaerkevalue = Convert.ToByte(random1.Next(0, 100));
+            
+            byte Sehstaerkevalue = Convert.ToByte(random.Next(0, 100));
             setSehstaerke(Sehstaerkevalue);
 
             //Augenfarbe
             //Die 1 Steht für Braun die 2 Für Blau der Code von Zeile 71 bis 83 erstellt eine Random Zahl zwischen 1 und 2 welche für Braun und Blau stehen so generieren wir Random eine Augenfarbe
             string Augenfarbe = "";
-            Random random2 = new Random();
-            byte Augenvalue = Convert.ToByte(random2.Next(0, 2));
+            byte Augenvalue = Convert.ToByte(random.Next(0, 2));
 
             if (Augenvalue == 1)
             {
@@ -61,20 +58,17 @@ namespace TestM320
             setAugenfarbe(Augenfarbe);
 
             //Hoervermoegen
-            Random random3 = new Random();
-            byte hoervermoegenvalue = Convert.ToByte(random3.Next(0, 100));
+            byte hoervermoegenvalue = Convert.ToByte(random.Next(0, 100));
 
             setHoervermoegen(hoervermoegenvalue);
 
             //Groesse
-            Random random4 = new Random();
-            float groessevalue = Convert.ToSingle(random4.Next(130, 210));
+            float groessevalue = Convert.ToSingle(random.Next(130, 210));
 
             setGroesse(groessevalue);
 
             //Geschlecht
-            Random random5 = new Random();
-            byte Geschlechtvalue = Convert.ToByte(random5.Next(0, 2));
+            byte Geschlechtvalue = Convert.ToByte(random.Next(0, 2));
 
             if (Geschlechtvalue == 1)
             {
@@ -84,28 +78,18 @@ namespace TestM320
             {
                 setGeschlecht(false);
             }
-            //Lebenserwartung 
-            Random random6 = new Random();
-            int Lebenserwartungvalue = random6.Next(50, 100);
-
-            Lebenserwartung(Lebenserwartungvalue);
 
             //Vorname
             if (getGeschlecht() == true)
             {
-                Random randomM = new Random();
-                int MännlichVornamevalue = randomM.Next(0, 13);
-                setVorname(MännlichVornameArray[MännlichVornamevalue]);
+                int MännlichVornamevalue = random.Next(0, MännlichVornameArray.Length-1);
+                  setVorname(MännlichVornameArray[MännlichVornamevalue]);
             }
             else if (getGeschlecht() == false)
             {
-                Random randomW = new Random();
-                int WeiblichVornamevalue = randomW.Next(0, 13);
-                setVorname(WeiblichVornameArray[WeiblichVornamevalue]);
+                int WeiblichVornamevalue = random.Next(0, WeiblichVornameArray.Length-1);
+                  setVorname(WeiblichVornameArray[WeiblichVornamevalue]);
             }
-
-
-
         }
         // Get und Set Vorname
         public string getVorname()
@@ -165,13 +149,14 @@ namespace TestM320
         {
             _geschlecht = value;
         }
-        
-        //Interface Lebenserwartung
-        void Lebenserwartung(int value)
+
+        //Interface
+        public void LebenserwartungMenschen()
         {
-            _lebenserwartung = value;
+            int Lebenszeit = random.Next(50, 80);
         }
-        
+
+        //Datenausgabe
         public virtual void Datenausgabe()
         {
           string output = $"Voller Name: {getVorname()} {_familie.getFamilienNachname()}, {getGroesse()}cm, {_augenfarbe} Augen, ";
