@@ -13,13 +13,23 @@ namespace TestM320
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
-            Familie f1 = new Familie();
-            Person p1 = new Person();
-            Eltern e1 = new Eltern();
-            Kind
-            Console.ReadLine();
+    static void Main(string[] args)
+    {
+      /*
+       Wichtig!
+       Wir hatten das Problem dass die Datenausgabe bei allen am Schluss gleich war.
+       Nur wenn man alle Zeile einzeln im debug-Modus oder so durchgeht, wird die Datenausgabe richtig angezeigt.
+      */
+
+      //erstellt die Familien
+      Familie f1 = new Familie();
+      Familie f2 = new Familie();
+
+      //Gibt alle Daten von den einzelnen Familienmitglieder aus
+      f1.FamilienDatenausgabe();
+      f2.FamilienDatenausgabe();
+
+      Console.ReadLine();
         }
     }
 }

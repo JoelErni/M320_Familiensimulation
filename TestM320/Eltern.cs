@@ -12,7 +12,7 @@ namespace TestM320
         public byte _anzahlKinder;
 
         //Konstruktor
-        public Eltern(byte anzahlKinder, string vorname, string nachname, byte sehstaerke, string augenfarbe, byte hoervermoegen, bool geschlecht) :base(vorname, nachname, sehstaerke, augenfarbe, hoervermoegen, geschlecht)
+        public Eltern(byte anzahlKinder, Familie familie) :base(familie)
         {
             _anzahlKinder = anzahlKinder;
         }
