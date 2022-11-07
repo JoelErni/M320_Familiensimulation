@@ -16,15 +16,16 @@ namespace TestM320
         private Eltern elternteil1;
         private Eltern elternteil2;
         private List<Kind> kinder = new List<Kind>();
+        public static Random random = new Random();
 
-        //Familienname Array
-        string[] FamilienName = new string[] { "Müller", "Schmidt", "Schneider", "Fischer", "Meyer", "Weber", "Wagner", "Becker", "Schulz", "Hoffmann", "Schäfer", "Koch", "Bauer", "Richter", "Klein", "Schröder", "Wolf", "Neumann", "Schwarz", "Zimmermann", "Krüger" };
+
+    //Familienname Array
+    string[] FamilienName = new string[] { "Müller", "Schmidt", "Schneider", "Fischer", "Meyer", "Weber", "Wagner", "Becker", "Schulz", "Hoffmann", "Schäfer", "Koch", "Bauer", "Richter", "Klein", "Schröder", "Wolf", "Neumann", "Schwarz", "Zimmermann", "Krüger" };
         
 
         //Konstruktoren
         public Familie()
         {
-          Random random = new Random();
           int value = random.Next(0, 20);
           setFamilienNachname(FamilienName[value]);
 

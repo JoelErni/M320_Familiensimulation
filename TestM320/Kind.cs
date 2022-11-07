@@ -72,6 +72,7 @@ namespace TestM320
         int LebenszeitKinder = random.Next(50, 120);
     }
 
+    //Datenausgabe
     public override void Datenausgabe()
     {
             int LebenszeitKinder = random.Next(50, 120);
